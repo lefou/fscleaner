@@ -25,7 +25,7 @@ delete: [
   download-cache
 ]
 
-# apply that to each sub directory
+# apply that to each sub directory when running recursively
 pattern {
   delete: [
     target
