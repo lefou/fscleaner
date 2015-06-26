@@ -1,0 +1,35 @@
+= FsCleaner
+
+Tool to automate the tasks of cleaning directories.
+
+The deletion process is controlled via configuration files.
+
+In later versions, it is planned to add a scan mode, which analyses directories and makes suggestions about possible delete candidates like: Maven caches and repos, bin- and target folders, ...
+
+More ideas: 
+
+- move files instead of delete
+- call external tools to delete content like e.g. `make clean`
+
+
+== Configuration
+
+fscleaner looks for a `.fscleanerrc` in each directory it visits.
+
+Example config:
+
+----
+# it's safe to delete this files and directories recursively
+delete: [
+  .cache
+  download-cache
+]
+
+# apply that to each sub directory
+pattern {
+  delete: [
+    target
+  ]
+}
+----
+
