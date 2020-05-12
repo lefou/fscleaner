@@ -1,11 +1,16 @@
 package fscleaner
 
 import java.io.File
+
+import scala.collection.JavaConverters.asScalaBufferConverter
+import scala.collection.immutable.List
+import scala.collection.immutable.Nil
+import scala.collection.immutable.Seq
+
 import com.typesafe.config.ConfigFactory
-import scala.collection.JavaConverters._
-import scala.collection.immutable._
-import de.tototec.cmdoption.CmdlineParser
+
 import de.tototec.cmdoption.CmdOption
+import de.tototec.cmdoption.CmdlineParser
 
 case class CleanConfig(
   deletes: Seq[String] = Seq(),

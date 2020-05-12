@@ -26,10 +26,23 @@ delete: [
 ]
 
 # apply that to each sub directory when running recursively
-pattern {
-  delete: [
-    target
-  ]
-}
+pattern.delete: [
+  target
+]
+----
+
+== Building
+
+FsCleaner is build with Mill build tool.
+You need at least Maven 3.3.1 to build this project.
+
+.Run directly from within mill
+----
+mill fscleaner.run
+----
+
+.Build an executable Java assembly
+----
+mill fscleaner.assembly
 ----
 
